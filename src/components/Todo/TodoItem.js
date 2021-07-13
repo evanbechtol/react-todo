@@ -2,33 +2,43 @@ import "./Todo.css";
 import Card from "../UI/Card";
 
 const TodoItem = ( {
-                     name,
-                     description,
-                     uid,
+                     item,
                      handleDelete,
                      handleEdit,
                      handleComplete
                    } ) => {
 
   const deleteItem = () => {
-    handleDelete({ name, description, uid});
+    handleDelete( {
+      name: item.name,
+      description: item.description,
+      uid: item.id
+    } );
   };
 
   const editItem = () => {
-    handleEdit({ name, description, uid});
+    handleEdit( {
+      name: item.name,
+      description: item.description,
+      uid: item.id
+    } );
   };
 
   const completeItem = () => {
-    handleComplete({ name, description, uid});
+    handleComplete( {
+      name: item.name,
+      description: item.description,
+      uid: item.id
+    } );
   };
 
   return (
     <li className="todo-item">
       <Card>
-        <p className="todo-item__name">{name}</p>
+        <p className="todo-item__name">{item.name}</p>
 
         <div className="todo-item__description">
-          {description}
+          {item.description}
         </div>
 
         <div className="todo-item__actions">

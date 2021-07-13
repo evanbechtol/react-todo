@@ -55,11 +55,8 @@ const TodoView = () => {
         {
           todos.map( item => {
             return <TodoItem className="todo-item"
+                             item={item}
                              key={item.name}
-                             name={item.name}
-                             description={item.description}
-                             uid={item.id}
-                             content={item}
                              handleDelete={handlers.deleteTodoItem}
                              handleComplete={handlers.completeTodoItem}
                              handleEdit={handlers.editTodoItem}/>;
