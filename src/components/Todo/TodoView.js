@@ -29,13 +29,24 @@ const TodoView = () => {
       setShowModal( false );
     },
     deleteTodoItem: ( data ) => {
-      setTodos((todos) => {
-        return todos.filter((item) => item.id !== data.uid);
-      });
+      setTodos( ( todos ) => {
+        return todos.filter( ( item ) => item.id !== data.uid );
+      } );
     },
     editTodoItem: ( data ) => {
       console.log( "edit item" );
       console.log( data );
+      setTodos( ( previousTodos ) => {
+        return previousTodos.map(todo => {
+          if (todo.id === data.uid) {
+            todo.name = data.name;
+            todo.description = data.description;
+          }
+
+          return todo;
+        });
+
+      });
     },
     completeTodoItem: ( data ) => {
       console.log( "complete item" );

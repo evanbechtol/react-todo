@@ -8,6 +8,13 @@ li {
   padding-left: 0;
 }
 
+
+
+.todo-item__row {
+  display: flex;
+  flex-direction: row;
+}
+
 .todo-item__name {
   font-size: 1.2rem;
   margin: 0 0 8px;
