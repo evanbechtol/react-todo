@@ -1,0 +1,95 @@
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem 1.5rem;
+  width: 24rem;
+  border-radius: 0.5rem;
+}
+
+.modal-inputs, .modal-inputs__group {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.modal-inputs input {
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+.modal-inputs textarea {
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+.modal-inputs__group:nth-child(2) {
+  margin: 16px 0;
+}
+
+.modal-input__label {
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-actions {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.modal-actions button {
+  font-size: 1rem;
+  padding: 4px 24px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.modal-actions button #add {
+  border-radius: 4px;
+  border: 1px solid transparent;
+  padding: 4px 24px;
+  background-color: #44b05b;
+  color: white;
+}
+
+.modal-actions button #cancel {
+  background-color: white;
+  border: 1px solid #bbb;
+}
+
+.close-button {
+  float: right;
+  line-height: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  border: none;
+  background-color: transparent;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+

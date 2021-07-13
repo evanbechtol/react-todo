@@ -1,0 +1,51 @@
+li {
+  list-style-type: none;
+  margin: 24px 0;
+}
+
+.todo-list__container {
+  width: 70vw;
+  padding-left: 0;
+}
+
+.todo-item__name {
+  font-size: 1.2rem;
+  margin: 0 0 8px;
+  padding: 4px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.todo-item__description {
+  padding-bottom: 16px;
+}
+
+.todo-item__actions {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.todo-item__actions button {
+  font-size: 1rem;
+  padding: 4px 24px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+#delete-item {
+  background-color: white;
+  border: 1px solid #bbb;
+}
+
+#edit-item {
+  margin-right: 8px;
+  background-color: #3a57b0;
+  color: white;
+}
+
+#complete-item {
+  background-color: #44b05b;
+  color: white;
+}

@@ -1,0 +1,27 @@
+.todo-header {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: space-between;
+  padding-bottom : 8px;
+  margin-top: 24px;
+  border-bottom: 1px solid #ddd;
+}
+
+.todo-header__title {
+  padding-top: 8px;
+  font-size: 1.2rem;
+  margin: 0 0 8px;
+  padding-bottom: 4px;
+  flex: 1;
+}
+
+.todo-header__add {
+  flex-shrink: 1;
+  background-color: #44b05b;
+  border: none;
+  color: white;
+  padding: 4px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+}
