@@ -1,5 +1,6 @@
 import "./Todo.css";
 import Card from "../UI/Card";
+import TodoItemCardFields from "./TodoItemCardFields";
 import { useState } from "react";
 
 const TodoItem = ( {
@@ -9,15 +10,15 @@ const TodoItem = ( {
                      handleComplete
                    } ) => {
   const [ isEdit, setIsEdit ] = useState( false );
-  const [enteredName, setEnteredName] = useState(item.name);
-  const [enteredDescription, setEnteredDescription] = useState(item.description);
+  const [ enteredName, setEnteredName ] = useState( item.name );
+  const [ enteredDescription, setEnteredDescription ] = useState( item.description );
 
-  const updateName = (e) => {
-    setEnteredName(e.target.value);
+  const updateName = ( e ) => {
+    setEnteredName( e.target.value );
   };
 
-  const updateDescription = (e) => {
-    setEnteredDescription(e.target.value);
+  const updateDescription = ( e ) => {
+    setEnteredDescription( e.target.value );
   };
 
   const deleteItem = () => {
@@ -49,33 +50,44 @@ const TodoItem = ( {
     } );
   };
 
+  const descriptionReadOnlyComponent = (
+    <div className="todo-item__description">
+      {enteredDescription}
+    </div>
+  );
+
+  const descriptionEditComponent = (
+    <textarea className="todo-item__description"
+              value={enteredDescription}
+              onChange={updateDescription}>
+              {item.description}
+    </textarea>
+  );
+
+  const nameReadOnlyComponent = (
+    <p className="todo-item__name">{enteredName}</p>
+  );
+
+  const nameEditComponent = (
+    <input className="todo-item__name"
+           value={enteredName}
+           onChange={updateName}/>
+  );
+
   return (
     <li className="todo-item">
       <Card>
         <div className="todo-item-container">
           <div className="todo-item__row">
-            {!isEdit && <p className="todo-item__name">{enteredName}</p>}
-            {isEdit && <input className="todo-item__name"
-                              value={enteredName}
-                              onChange={updateName}/>}
+            <TodoItemCardFields isEdit={isEdit}
+                                readOnlyComp={nameReadOnlyComponent}
+                                editComp={nameEditComponent}/>
           </div>
 
           <div className="todo-item__row">
-            {
-              !isEdit &&
-              <div className="todo-item__description">
-                {enteredDescription}
-              </div>
-            }
-
-            {
-              isEdit &&
-              <textarea className="todo-item__description"
-                        value={enteredDescription}
-                        onChange={updateDescription}>
-              {item.description}
-            </textarea>
-            }
+            <TodoItemCardFields isEdit={isEdit}
+                                readOnlyComp={descriptionReadOnlyComponent}
+                                editComp={descriptionEditComponent}/>
           </div>
 
           <div className="todo-item__actions">
